@@ -1,0 +1,27 @@
+version: '3'
+services:
+  microservice-a:
+    build: ./microservice-a
+    ports:
+      - "8000:8000"
+    networks:
+      - iqa
+
+  microservice-b:
+    build: ./microservice-b
+    ports:
+      - "8001:8001"
+    networks:
+      - iqa
+
+  microservice-c:
+    build: ./microservice-c
+    ports:
+      - "8002:8002"
+    networks:
+      - iqa
+
+networks:
+  iqa:
+    external: true 
+
